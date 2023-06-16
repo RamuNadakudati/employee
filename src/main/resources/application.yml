@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: local
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    data-password: root
+    data-username: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/employee?user=${spring.datasource.data-username}&password=${spring.datasource.data-password}
+    platform: postgres
+
+#appendOrigin: true
+#debug: false
+#logging:
+#  level:
+#    root: INFO
+#    com.test.em: INFO
+#    RESTfulAPI: INFO
+   
+   
+---
+#Hibernate
+spring:
+ jpa:
+  database: POSTGRESQL
+  show-sql: false
+  generate-ddl: true
+  properties:
+    hibernate:
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        connection:
+          charSet: UTF-8
